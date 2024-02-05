@@ -1,33 +1,22 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose ,{Schema}from "mongoose";
 
 const userSchema = new Schema({
-    userName: {
-        type: String,
-        required: true,
-        unique: true,
-        trim: true,
-        lowercase: true,
-        minlength: 3, 
-        maxlength: 30
+    email:{
+        type:String,
+        required:true
     },
-    password: {
-        type: String,
-        required: true,
-        minlength: 6
+    userName:{
+        type:String,
+        required:true
     },
-    firstName: {
-        type: String,
-        required: true,
-        trim: true,
-        maxlength: 50
+    password:{
+        type:String,
+        required:true
     },
-    lastName: {
-        type: String,
-        required: true,
-        trim: true,
-        maxlength: 50
+    fullName:{
+        type:String,
+        required:true
     }
-});
+})
 
-export const User = mongoose.model("User", userSchema);  // "User" is usually the singular form
-
+export const User = mongoose.model("user",userSchema);
