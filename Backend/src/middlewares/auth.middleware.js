@@ -12,7 +12,7 @@ export const checkAuth = async (req, res, next) => {
 
     try {
         const payload = jwt.verify(token, "Aryan");
-        req.payload = payload; // Change 'const user = req.payload;' to 'req.payload = payload;'
+        req.user = payload;
         next();
     } catch (error) {
         return res.status(401).json({
