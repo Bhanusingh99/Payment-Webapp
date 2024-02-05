@@ -46,12 +46,15 @@ export const signup = async (req,res) => {
             userId:user._id,
             balance:balance
         })
+        const payLoad = {
+            username:username
+        }
+        const token = Jwt.sign(payLoad,"Aryan",{expiresIn:"2h"})
         //successfull response
         return res.status(200).json({
             success:true,
             message:"User Created successfull",
-            data:user,
-            givebalance
+            token:token
         })
     } catch (error) {
         console.log(error)

@@ -13,7 +13,7 @@ userRouter.get('/aryan',checkAuth,(req,res) => {
 })
 
 userRouter.put("/update-password",checkAuth,updatePassword)
-userRouter.get('bulk',findUser);
+userRouter.get('/bulk',findUser);
 userRouter.get('/get-balance',checkAuth,getBalance)
 userRouter.post("/transfer-money",checkAuth,tranferMoney)
 
